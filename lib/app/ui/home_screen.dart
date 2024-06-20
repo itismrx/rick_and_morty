@@ -55,28 +55,29 @@ class _HomeScreenState extends State<HomeScreen> {
                         const SizedBox(
                           height: 16,
                         ),
-                        ElevatedButton(
-                            onPressed: () async {
-                              FetchMoreOptions opts = FetchMoreOptions(
-                                variables: {'page': nextPage},
-                                updateQuery:
-                                    (previousResultData, fetchMoreResultData) {
-                                  final List<dynamic> repos = [
-                                    ...previousResultData!["characters"]
-                                        ["results"] as List<dynamic>,
-                                    ...fetchMoreResultData!["characters"]
-                                        ["results"] as List<dynamic>
-                                  ];
-                                  fetchMoreResultData["characters"]["results"] =
-                                      repos;
-                                  return fetchMoreResultData;
-                                },
-                              );
-                              await fetchMore!(opts);
-                            },
-                            child: result.isLoading
-                                ? const CircularProgressIndicator.adaptive()
-                                : const Text("Load More"))
+                        if (nextPage != null)
+                          ElevatedButton(
+                              onPressed: () async {
+                                FetchMoreOptions opts = FetchMoreOptions(
+                                  variables: {'page': nextPage},
+                                  updateQuery: (previousResultData,
+                                      fetchMoreResultData) {
+                                    final List<dynamic> repos = [
+                                      ...previousResultData!["characters"]
+                                          ["results"] as List<dynamic>,
+                                      ...fetchMoreResultData!["characters"]
+                                          ["results"] as List<dynamic>
+                                    ];
+                                    fetchMoreResultData["characters"]
+                                        ["results"] = repos;
+                                    return fetchMoreResultData;
+                                  },
+                                );
+                                await fetchMore!(opts);
+                              },
+                              child: result.isLoading
+                                  ? const CircularProgressIndicator.adaptive()
+                                  : const Text("Load More"))
                       ],
                     ),
                   ),
