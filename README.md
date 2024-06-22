@@ -58,8 +58,10 @@ The app uses the `graphql_flutter` package to communicate with the GraphQL API a
 
 ## Course Outline
 - [ ] Download Android Studio
+   https://developer.android.com/studio
     - [ ] Install command line tool
 - [ ] Install Dart & Flutter
+   https://docs.flutter.dev/get-started/install
 - [ ] Install Flutter extension
 - [ ] Run the first app
 
