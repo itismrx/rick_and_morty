@@ -56,6 +56,23 @@ The app displays a list of characters from the Rick and Morty show. Users can ta
 
 The app uses the `graphql_flutter` package to communicate with the GraphQL API and the `flutter_riverpod` package for state management. Offline support is provided by caching the character data using the `cached_network_image` package.
 
+## Course Outline
+- [] Download Android Studio
+    - [ ] Install command line tool
+- [ ] Install Dart & Flutter
+- [ ] Install Flutter extension
+- [ ] Run the first app
+
+- [ ] Widgets  
+    - [ ] Layout Widgets
+    - [ ] Styling Widgets
+    - [ ] Animation Widgets
+
+- [ ] 3rd party packages
+- [ ] Folder Structure
+- [ ] GraphQL
+    - [ ] flutter_graphql
+- [ ] RiverPod
 
 
 ## License
