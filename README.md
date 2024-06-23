@@ -76,6 +76,9 @@ The app uses the `graphql_flutter` package to communicate with the GraphQL API a
     - [ ] flutter_graphql
 - [ ] RiverPod
 
+## Recommended Courses
+
+
 
 ## License
 

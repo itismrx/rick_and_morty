@@ -14,6 +14,9 @@ getAllCharachters() => gql(r"""
         image
         type
         name
+        location{
+          name
+        }
       }
     }
   }

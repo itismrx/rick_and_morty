@@ -26,18 +26,19 @@ class _HomeScreenState extends State<HomeScreen> {
           padding: const EdgeInsets.symmetric(horizontal: 16),
           child: Query(
             builder: (result, {fetchMore, refetch}) {
+              // We have data
               if (result.data != null) {
                 int? nextPage = 1;
                 List<Character> characters =
                     (result.data!["characters"]["results"] as List)
                         .map((e) => Character.fromMap(e))
                         .toList();
+
                 nextPage = result.data!["characters"]["info"]["next"];
 
                 return RefreshIndicator(
                   onRefresh: () async {
                     await refetch!();
-
                     nextPage = 1;
                   },
                   child: SingleChildScrollView(
@@ -82,18 +83,28 @@ class _HomeScreenState extends State<HomeScreen> {
                     ),
                   ),
                 );
-              } else if (result.isLoading && result.data == null) {
+              }
+              // We got data but it is null
+              else if (result.data == null) {
+                return const Text("Data Not Found!");
+              }
+              // We don't have data yet -> LOADING STATE
+              else if (result.isLoading) {
                 return const Center(
                   child: Text("Loading..."),
                 );
-              } else {
+              }
+              // error state
+              else {
                 return const Center(
-                  child: Text("Something went wrong"),
+                  child: Center(child: Text("Something went wrong")),
                 );
               }
             },
             options: QueryOptions(
-                document: getAllCharachters(), variables: const {"page": 1}),
+                fetchPolicy: FetchPolicy.cacheAndNetwork,
+                document: getAllCharachters(),
+                variables: const {"page": 1}),
           ),
         ),
       ),

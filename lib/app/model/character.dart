@@ -9,6 +9,7 @@ class Character {
   final String image;
   final String name;
   final String status;
+  final String location;
   Character({
     required this.id,
     required this.gender,
@@ -17,6 +18,7 @@ class Character {
     required this.image,
     required this.name,
     required this.status,
+    required this.location,
   });
 
   Character copyWith({
@@ -27,6 +29,7 @@ class Character {
     String? image,
     String? name,
     String? status,
+    String? location,
   }) {
     return Character(
       id: id ?? this.id,
@@ -36,6 +39,7 @@ class Character {
       image: image ?? this.image,
       name: name ?? this.name,
       status: status ?? this.status,
+      location: location ?? this.location,
     );
   }
 
@@ -48,6 +52,7 @@ class Character {
       'image': image,
       'name': name,
       'status': status,
+      'location': location,
     };
   }
 
@@ -60,6 +65,8 @@ class Character {
       image: map['image'] as String,
       name: map['name'] as String,
       status: map['status'] as String,
+      location:
+          map['location'] == null ? "" : map['location']['name'] as String,
     );
   }
 
@@ -70,7 +77,7 @@ class Character {
 
   @override
   String toString() {
-    return 'Character(id: $id, gender: $gender, type: $type, species: $species, image: $image, name: $name, status: $status)';
+    return 'Character(id: $id, gender: $gender, type: $type, species: $species, image: $image, name: $name, status: $status, location: $location)';
   }
 
   @override
@@ -83,7 +90,8 @@ class Character {
         other.species == species &&
         other.image == image &&
         other.name == name &&
-        other.status == status;
+        other.status == status &&
+        other.location == location;
   }
 
   @override
@@ -94,6 +102,7 @@ class Character {
         species.hashCode ^
         image.hashCode ^
         name.hashCode ^
-        status.hashCode;
+        status.hashCode ^
+        location.hashCode;
   }
 }
