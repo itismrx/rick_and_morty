@@ -59,19 +59,19 @@ The app uses the `graphql_flutter` package to communicate with the GraphQL API a
 ## Course Outline
 - [x] Download Android Studio
    https://developer.android.com/studio
-    - [ ] Install command line tool
+    - [x] Install command line tool
 - [x] Install Dart & Flutter
    https://docs.flutter.dev/get-started/install
 - [x] Install Flutter extension
 - [ ] Run the first app
 
-- [ ] Widgets  
-    - [ ] Layout Widgets
-    - [ ] Styling Widgets
-    - [ ] Animation Widgets
+- [x] Widgets  
+    - [x] Layout Widgets
+    - [x] Styling Widgets
+    - [x] Animation Widgets
 
-- [ ] 3rd party packages
-- [ ] Folder Structure
+- [x] 3rd party packages
+- [x] Folder Structure
 - [ ] GraphQL
     - [ ] flutter_graphql
 - [ ] RiverPod
