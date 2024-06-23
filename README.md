@@ -63,7 +63,7 @@ The app uses the `graphql_flutter` package to communicate with the GraphQL API a
 - [x] Install Dart & Flutter
    https://docs.flutter.dev/get-started/install
 - [x] Install Flutter extension
-- [ ] Run the first app
+- [x] Run the first app
 
 - [x] Widgets  
     - [x] Layout Widgets

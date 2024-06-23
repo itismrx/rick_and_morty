@@ -17,6 +17,7 @@ class CharacterWidget extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         mainAxisSize: MainAxisSize.min,
         children: [
+          // Image
           Container(
             alignment: Alignment.centerLeft,
             width: double.maxFinite,
@@ -27,6 +28,7 @@ class CharacterWidget extends StatelessWidget {
               fit: BoxFit.fitWidth,
             ),
           ),
+          // Space
           const SizedBox(
             height: 8,
           ),
@@ -35,6 +37,7 @@ class CharacterWidget extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
+                // Name & Status
                 Row(
                   children: [
                     Flexible(
@@ -65,9 +68,11 @@ class CharacterWidget extends StatelessWidget {
                     )
                   ],
                 ),
+                // Space
                 const SizedBox(
                   height: 8,
                 ),
+                // Gender & Species
                 SingleChildScrollView(
                   scrollDirection: Axis.horizontal,
                   child: Row(
